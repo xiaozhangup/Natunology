@@ -18,9 +18,11 @@ public class Main extends JavaPlugin {
         saveDefaultConfig();
         reloadConfig();
 
-        MovePart.runStep();
-        Bukkit.getPluginManager().registerEvents(new MovePart() , this);
-        getLogger().info("Step Loaded!");
+        if (getConfig().getBoolean("Step.enable")) {
+            MovePart.runStep();
+            Bukkit.getPluginManager().registerEvents(new MovePart() , this);
+            getLogger().info("Step Loaded!");
+        }
 
         getLogger().info(this + " Loaded!");
         getLogger().info(Bukkit.getBukkitVersion());
