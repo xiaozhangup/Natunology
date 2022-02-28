@@ -1,5 +1,6 @@
 package me.xiaozhangup.natunology;
 
+import me.xiaozhangup.natunology.event.BlockHolo;
 import me.xiaozhangup.natunology.event.Invkeep;
 import me.xiaozhangup.natunology.event.MovePart;
 import org.bukkit.Bukkit;
@@ -28,6 +29,11 @@ public class Main extends JavaPlugin {
         if (getConfig().getBoolean("Dead.enable")) {
             Bukkit.getPluginManager().registerEvents(new Invkeep() , this);
             getLogger().info("DeadKeep Loaded!");
+        }
+
+        if (getConfig().getBoolean("Holo.enable")) {
+            Bukkit.getPluginManager().registerEvents(new BlockHolo() , this);
+            getLogger().info("Holo Loaded!");
         }
 
         getLogger().info(this + " Loaded!");

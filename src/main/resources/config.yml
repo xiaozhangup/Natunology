@@ -3,3 +3,5 @@ Step:
   size: 1.05
 Dead:
   enable: true
+Holo:
+  enable: true
