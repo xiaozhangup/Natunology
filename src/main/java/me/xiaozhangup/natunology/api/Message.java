@@ -10,4 +10,8 @@ public class Message {
     public static String getCode() {
         return "§";
     }
+
+    public static String color(String s) {
+        return s.replace("&" , getCode());
+    }
 }

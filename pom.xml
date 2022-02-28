@@ -14,7 +14,7 @@
     <groupId>me.xiaozhangup.natunology</groupId>
     <artifactId>Natunology</artifactId>
     <name>Natunology</name>
-    <version>1.0.7</version>
+    <version>1.0.8</version>
 
     <dependencies>
         <dependency>

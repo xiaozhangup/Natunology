@@ -1,3 +1,5 @@
 Step:
   enable: true
   size: 1.05
+Dead:
+  enable: true

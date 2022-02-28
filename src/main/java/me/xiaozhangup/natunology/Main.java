@@ -1,5 +1,6 @@
 package me.xiaozhangup.natunology;
 
+import me.xiaozhangup.natunology.event.Invkeep;
 import me.xiaozhangup.natunology.event.MovePart;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
@@ -22,6 +23,11 @@ public class Main extends JavaPlugin {
             MovePart.runStep();
             Bukkit.getPluginManager().registerEvents(new MovePart() , this);
             getLogger().info("Step Loaded!");
+        }
+
+        if (getConfig().getBoolean("Dead.enable")) {
+            Bukkit.getPluginManager().registerEvents(new Invkeep() , this);
+            getLogger().info("DeadKeep Loaded!");
         }
 
         getLogger().info(this + " Loaded!");
