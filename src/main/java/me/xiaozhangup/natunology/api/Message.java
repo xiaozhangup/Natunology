@@ -7,6 +7,12 @@ public class Message {
         p.sendMessage(s.replace("&" , ""));
     }
 
+    public static void send(Player p , String... s) {
+        for (String message : s) {
+            p.sendMessage(message.replace("&" , ""));
+        }
+    }
+
     public static String getCode() {
         return "§";
     }

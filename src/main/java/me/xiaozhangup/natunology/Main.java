@@ -1,5 +1,6 @@
 package me.xiaozhangup.natunology;
 
+import me.xiaozhangup.natunology.commands.Commands;
 import me.xiaozhangup.natunology.event.BlockHolo;
 import me.xiaozhangup.natunology.event.Invkeep;
 import me.xiaozhangup.natunology.event.MovePart;
@@ -25,6 +26,9 @@ public class Main extends JavaPlugin {
             Bukkit.getPluginManager().registerEvents(new MovePart() , this);
             getLogger().info("Step Loaded!");
         }
+
+        Commands.regCommands();
+        getLogger().info("Commands Loaded!");
 
 //        if (getConfig().getBoolean("Dead.enable")) {
 //            Bukkit.getPluginManager().registerEvents(new Invkeep() , this);
