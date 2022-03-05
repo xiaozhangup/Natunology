@@ -45,6 +45,14 @@ public class MainTap implements Listener {
         InventoryHolder holder = player.getOpenInventory().getTopInventory().getHolder();
         if (holder instanceof Menukey) {
             e.setCancelled(true);
+            ItemStack itemStack = e.getCurrentItem();
+            if (itemStack != null && itemStack.hasItemMeta() && itemStack.getItemMeta().hasCustomModelData()) {
+                if (itemStack.getItemMeta().getCustomModelData() == 2) {
+                    InfoMenu.openInfoMenu(player);
+                } else if (itemStack.getItemMeta().getCustomModelData() == 3) {
+                    openMainTap(player);
+                }
+            }
         }
     }
 }
