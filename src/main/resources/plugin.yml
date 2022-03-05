@@ -5,6 +5,8 @@ api-version: 1.13
 authors:
   - xiaozhangup
 description: Happyland pack
+depend:
+  - HeadDatabase
 commands:
   natunology:
     aliases: [ntg]

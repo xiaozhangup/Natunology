@@ -5,6 +5,7 @@ import me.xiaozhangup.natunology.event.BlockHolo;
 import me.xiaozhangup.natunology.event.Invkeep;
 import me.xiaozhangup.natunology.event.MovePart;
 import me.xiaozhangup.natunology.techcore.events.Books;
+import me.xiaozhangup.natunology.techcore.views.MainTap;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -34,6 +35,7 @@ public class Main extends JavaPlugin {
         getLogger().info("Commands Loaded!");
 
         Bukkit.getPluginManager().registerEvents(new Books() , this);
+        Bukkit.getPluginManager().registerEvents(new MainTap() , this);
 
 //        if (getConfig().getBoolean("Dead.enable")) {
 //            Bukkit.getPluginManager().registerEvents(new Invkeep() , this);

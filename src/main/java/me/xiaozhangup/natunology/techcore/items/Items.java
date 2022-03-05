@@ -3,10 +3,13 @@ package me.xiaozhangup.natunology.techcore.items;
 import me.xiaozhangup.natunology.api.Message;
 import me.xiaozhangup.natunology.api.NString;
 import org.bukkit.Material;
+import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.SkullMeta;
 
 import java.util.HashMap;
+import java.util.UUID;
 
 public class Items {
 

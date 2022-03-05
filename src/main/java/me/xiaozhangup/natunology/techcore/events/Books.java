@@ -1,6 +1,7 @@
 package me.xiaozhangup.natunology.techcore.events;
 
 import me.xiaozhangup.natunology.api.Message;
+import me.xiaozhangup.natunology.techcore.views.MainTap;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -16,7 +17,7 @@ public class Books implements Listener {
                 e.getItem().getItemMeta().getCustomModelData() == 1) {
             Player p = e.getPlayer();
             e.setCancelled(true);
-            Message.send(p , "Book Passed! NPE Mode");
+            MainTap.openMainTap(p);
         }
     }
 }
