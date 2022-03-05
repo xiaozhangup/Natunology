@@ -1,7 +1,8 @@
 Step:
   enable: true
   size: 1.05
-Dead:
-  enable: true
-Holo:
-  enable: true
+#我们禁用了这些功能于源代码
+#Dead:
+#  enable: true
+#Holo:
+#  enable: true

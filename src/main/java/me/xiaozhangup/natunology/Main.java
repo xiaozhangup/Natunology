@@ -26,15 +26,15 @@ public class Main extends JavaPlugin {
             getLogger().info("Step Loaded!");
         }
 
-        if (getConfig().getBoolean("Dead.enable")) {
-            Bukkit.getPluginManager().registerEvents(new Invkeep() , this);
-            getLogger().info("DeadKeep Loaded!");
-        }
-
-        if (getConfig().getBoolean("Holo.enable")) {
-            Bukkit.getPluginManager().registerEvents(new BlockHolo() , this);
-            getLogger().info("Holo Loaded!");
-        }
+//        if (getConfig().getBoolean("Dead.enable")) {
+//            Bukkit.getPluginManager().registerEvents(new Invkeep() , this);
+//            getLogger().info("DeadKeep Loaded!");
+//        }
+//
+//        if (getConfig().getBoolean("Holo.enable")) {
+//            Bukkit.getPluginManager().registerEvents(new BlockHolo() , this);
+//            getLogger().info("Holo Loaded!");
+//        }
 
         getLogger().info(this + " Loaded!");
         getLogger().info(Bukkit.getBukkitVersion());
