@@ -14,15 +14,15 @@ public class Commands {
             Player p = (Player) commandSender;
             try {
                 if (inside[0].equals("version")) {
-                    Message.send(p , " ",
-                            " &7&lNatunology HAPPYLAND" ,
-                            " &f运行时版本: &7" + Bukkit.getPluginManager().getPlugin(Main.plugin.getName()).getDescription().getVersion() ,
+                    Message.send(p, " ",
+                            " &7&lNatunology HAPPYLAND",
+                            " &f运行时版本: &7" + Bukkit.getPluginManager().getPlugin(Main.plugin.getName()).getDescription().getVersion(),
                             " &f开发者: &7" + Bukkit.getPluginManager().getPlugin("Natunology").getDescription().getAuthors(),
                             " &f自述信息: &7" + Bukkit.getPluginManager().getPlugin("Natunology").getDescription().getDescription(),
                             " &c&l开放源代码 &7https://github.com/xiaozhangup/Natunology",
                             " ");
                 } else if (inside[0].equals("help")) {
-                    Message.send(p , " ",
+                    Message.send(p, " ",
                             " &f&lNatunology 命令帮助",
                             " &7&lCode By HAPPYLAND Team",
                             " ",
@@ -35,27 +35,32 @@ public class Commands {
                             " &7/ntg reload - &c重载配置文件(不安全)",
                             " ");
                 } else if (inside[0].equals("reload")) {
-                    try {
-                        Main.plugin.reloadConfig();
-                        Message.send(p , "&f[&7科技&f] &a重载已完成,没有错误!");
-                    } catch (Exception e) {
-                        Message.send(p , "&f[&7科技&f] 重载可能已执行,但是 &c" + e.getMessage());
+                    if (p.isOp()) {
+                        try {
+                            Main.plugin.reloadConfig();
+                            Message.send(p, "&f[&7科技&f] &a重载已完成,没有错误!");
+                        } catch (Exception e) {
+                            Message.send(p, "&f[&7科技&f] 重载可能已执行,但是 &c" + e.getMessage());
+                        }
+                    } else {
+                        Message.send(p, "&f[&7科技&f] &c你没有权限执行这个命令");
                     }
+
                 } else if (inside[0].equals("book")) {
                     p.getInventory().addItem(Items.guide());
                 } else if (inside[0].equals("getid")) {
                     try {
-                        Message.send(p , "&f[&7科技&f] 这个物品的NTGID是: " + p.getInventory().getItemInMainHand().getItemMeta().getCustomModelData());
+                        Message.send(p, "&f[&7科技&f] 这个物品的NTGID是: " + p.getInventory().getItemInMainHand().getItemMeta().getCustomModelData());
                     } catch (Exception e) {
-                        Message.send(p , "&f[&7科技&f] &c这个物品没有 NTGID");
+                        Message.send(p, "&f[&7科技&f] &c这个物品没有 NTGID");
                     }
                 } else if (inside[0].equals("guide")) {
                     MainTap.openMainTap(p);
                 } else {
-                    Message.send(p , "&f[&7科技&f] &c没有这个命令!" , "&f[&7科技&f] 输入/ntg help 查看帮助");
+                    Message.send(p, "&f[&7科技&f] &c没有这个命令!", "&f[&7科技&f] 输入/ntg help 查看帮助");
                 }
             } catch (Exception e) {
-                Message.send(p , "&f[&7科技&f] 执行命令时遇到错误! 内容: &c" + e.getMessage() , "&f[&7科技&f] 输入/ntg help 查看帮助");
+                Message.send(p, "&f[&7科技&f] 执行命令时遇到错误! 内容: &c" + e.getMessage(), "&f[&7科技&f] 输入/ntg help 查看帮助");
             }
             return false;
         });

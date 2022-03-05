@@ -1,12 +1,10 @@
 name: Natunology
 main: me.xiaozhangup.natunology.Main
-version: 1.1.0
+version: 1.1.2
 api-version: 1.13
 authors:
   - xiaozhangup
 description: Happyland pack
-depend:
-  - HeadDatabase
 commands:
   natunology:
-    aliases: [ntg]
+    aliases: [ ntg ]

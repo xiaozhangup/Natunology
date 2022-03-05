@@ -12,13 +12,13 @@ public class Invkeep implements Listener {
 
     @EventHandler
     public void onWorldLoad(WorldLoadEvent e) {
-        e.getWorld().setGameRule(GameRule.KEEP_INVENTORY , true);
+        e.getWorld().setGameRule(GameRule.KEEP_INVENTORY, true);
     }
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
         for (World world : Bukkit.getWorlds()) {
-            world.setGameRule(GameRule.KEEP_INVENTORY , true);
+            world.setGameRule(GameRule.KEEP_INVENTORY, true);
         }
     }
 }

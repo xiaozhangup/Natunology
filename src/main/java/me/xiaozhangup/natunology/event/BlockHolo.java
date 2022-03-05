@@ -9,6 +9,6 @@ public class BlockHolo implements Listener {
 
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent e) {
-        Holo.createHoloTime(e.getBlock().getBlockData().getMaterial().toString() , e.getBlock().getLocation(), 20);
+        Holo.createHoloTime(e.getBlock().getBlockData().getMaterial().toString(), e.getBlock().getLocation(), 20);
     }
 }

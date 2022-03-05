@@ -15,7 +15,7 @@ import org.bukkit.inventory.ItemStack;
 public class MovePart implements Listener {
 
     public static void runStep() {
-        Bukkit.getScheduler().runTaskTimer(Main.plugin , () -> {
+        Bukkit.getScheduler().runTaskTimer(Main.plugin, () -> {
             for (Player p : Bukkit.getOnlinePlayers()) {
                 Location location = p.getLocation();
                 location.setY(location.getY() - 1D);
@@ -26,7 +26,7 @@ public class MovePart implements Listener {
                     return;
                 }
                 location.setY(p.getLocation().toBlockLocation().getY() - Main.plugin.getConfig().getDouble("Step.size"));
-                ArmorStand armorStand = (ArmorStand) location.getWorld().spawnEntity(location , EntityType.ARMOR_STAND);
+                ArmorStand armorStand = (ArmorStand) location.getWorld().spawnEntity(location, EntityType.ARMOR_STAND);
                 armorStand.setVisible(false);
                 armorStand.setSmall(true);
                 armorStand.setCanMove(false);
@@ -34,11 +34,11 @@ public class MovePart implements Listener {
                 armorStand.setCanPickupItems(false);
                 armorStand.setHelmet(new ItemStack(location.getBlock().getBlockData().getMaterial()));
 
-                Bukkit.getScheduler().runTaskLater(Main.plugin , () -> {
+                Bukkit.getScheduler().runTaskLater(Main.plugin, () -> {
                     armorStand.remove();
-                } , 50L);
+                }, 50L);
             }
-        } , 1L , 16L);
+        }, 1L, 16L);
     }
 
     @EventHandler

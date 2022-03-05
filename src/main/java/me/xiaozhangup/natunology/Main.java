@@ -1,16 +1,12 @@
 package me.xiaozhangup.natunology;
 
 import me.xiaozhangup.natunology.commands.Commands;
-import me.xiaozhangup.natunology.event.BlockHolo;
-import me.xiaozhangup.natunology.event.Invkeep;
 import me.xiaozhangup.natunology.event.MovePart;
 import me.xiaozhangup.natunology.techcore.events.Books;
 import me.xiaozhangup.natunology.techcore.views.MainTap;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.awt.print.Book;
 
 public class Main extends JavaPlugin {
 
@@ -27,15 +23,15 @@ public class Main extends JavaPlugin {
 
         if (getConfig().getBoolean("Step.enable")) {
             MovePart.runStep();
-            Bukkit.getPluginManager().registerEvents(new MovePart() , this);
+            Bukkit.getPluginManager().registerEvents(new MovePart(), this);
             getLogger().info("Step Loaded!");
         }
 
         Commands.regCommands();
         getLogger().info("Commands Loaded!");
 
-        Bukkit.getPluginManager().registerEvents(new Books() , this);
-        Bukkit.getPluginManager().registerEvents(new MainTap() , this);
+        Bukkit.getPluginManager().registerEvents(new Books(), this);
+        Bukkit.getPluginManager().registerEvents(new MainTap(), this);
 
 //        if (getConfig().getBoolean("Dead.enable")) {
 //            Bukkit.getPluginManager().registerEvents(new Invkeep() , this);

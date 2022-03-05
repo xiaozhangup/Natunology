@@ -8,10 +8,10 @@ import org.bukkit.entity.EntityType;
 
 public class Holo {
 
-    public static void createHoloTime(String s , Location loc , int i) {
+    public static void createHoloTime(String s, Location loc, int i) {
         loc.setX(loc.getX() + 0.5);
         loc.setZ(loc.getZ() + 0.5);
-        AreaEffectCloud flag = (AreaEffectCloud) (loc.getWorld().spawnEntity(loc , EntityType.AREA_EFFECT_CLOUD));
+        AreaEffectCloud flag = (AreaEffectCloud) (loc.getWorld().spawnEntity(loc, EntityType.AREA_EFFECT_CLOUD));
         flag.setRadius(-10.0F);
         flag.setParticle(Particle.ASH);
         flag.setCustomName(s);

@@ -10,7 +10,7 @@ public class NString {
     public static List<String> toStringlist(String... s) {
         List<String> strings = new ArrayList<>();
         for (String string : s) {
-            strings.add(string.replace("&" , getCode()));
+            strings.add(string.replace("&", getCode()));
         }
         return strings;
     }

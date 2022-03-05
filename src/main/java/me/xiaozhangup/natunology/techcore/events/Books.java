@@ -1,6 +1,5 @@
 package me.xiaozhangup.natunology.techcore.events;
 
-import me.xiaozhangup.natunology.api.Message;
 import me.xiaozhangup.natunology.techcore.views.MainTap;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
