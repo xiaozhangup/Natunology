@@ -1,6 +1,7 @@
 package me.xiaozhangup.natunology.techcore.views;
 
 import me.xiaozhangup.natunology.api.Message;
+import me.xiaozhangup.natunology.api.NString;
 import me.xiaozhangup.natunology.techcore.Datahash;
 import me.xiaozhangup.natunology.techcore.items.Items;
 import org.bukkit.Bukkit;
@@ -28,7 +29,8 @@ public class InfoMenu {
         inventory.setItem(11, Items.itemBuilder(Material.PAPER, "&fItemGroupD", " ", "&7T: " + Datahash.itemgroupd.size()));
         inventory.setItem(12, Items.itemBuilder(Material.PAPER, "&fGroupID", " ", "&7T: " + Datahash.groupid.size()));
         inventory.setItem(13, Items.itemBuilder(Material.PAPER, "&fLastGroup", " ", "&7T: " + Datahash.lastgroup.size()));
-        inventory.setItem(14, Items.itemBuilder(Material.PAPER, "&fCraftTable", " ", "&7T: " + Datahash.crafttable.size()));
+
+        inventory.setItem(17, Items.getSkull("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDU2Yzk0NjE5MDMxMjMxNjhjZTY2N2VhZDdlYTU2YTUxNjEzMDk3MDQ5YmE2NDc4MzJiMzcyMmFmZmJlYjYzNiJ9fX0=", "&f服务器运行", NString.toStringlist("", "&7Bukkit " + Bukkit.getBukkitVersion(), "&7Minecraft " + Bukkit.getMinecraftVersion(), "&7Version " + Bukkit.getVersion())));
 
         p.openInventory(inventory);
 

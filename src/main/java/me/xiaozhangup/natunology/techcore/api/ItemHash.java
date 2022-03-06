@@ -2,6 +2,7 @@ package me.xiaozhangup.natunology.techcore.api;
 
 import me.xiaozhangup.natunology.techcore.Datahash;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class ItemHash {
 
@@ -19,6 +20,9 @@ public class ItemHash {
     }
 
     public static void addItem(ItemStack itemStack, Integer integer, String group) {
+        ItemMeta itemMeta = itemStack.getItemMeta();
+        itemMeta.setCustomModelData(integer);
+        itemStack.setItemMeta(itemMeta);
         Datahash.items.put(integer, itemStack);
         Datahash.itemgroupd.put(integer, group);
     }

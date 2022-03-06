@@ -85,13 +85,12 @@ public class MainTap {
             for (int i = 36; i <= 44; i++) {
                 inventory.setItem(i, Items.board());
             }
+            Datahash.lastgroup.put(p, "id" + id);
 
             inventory.setItem(4, Items.getHome());
             inventory.setItem(0, Items.getBack());
 
             inventory.setItem(19, Datahash.items.get(id));
-
-            //todo callevent
 
             p.openInventory(inventory);
         } catch (Exception ignored) {

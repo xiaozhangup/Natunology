@@ -22,8 +22,8 @@ public class Items {
         ItemStack itemStack = new ItemStack(Material.BOOK);
         ItemMeta itemMeta = itemStack.getItemMeta();
         itemMeta.setCustomModelData(1);
-        itemMeta.setDisplayName(Message.color("&7Natunology 指导书"));
-        itemMeta.setLore(NString.toStringlist(" ", "&f右键单击打开书本", "&e技术 物品 工具"));
+        itemMeta.setDisplayName(Message.color("&7  Natunology 指导书"));
+        itemMeta.setLore(NString.toStringlist(" ", "&f右键单击打开指导书", "&fShift + 右键打开关于"));
         itemStack.setItemMeta(itemMeta);
         return itemStack;
     }
@@ -117,13 +117,6 @@ public class Items {
         ItemMeta itemMeta = itemStack.getItemMeta();
         itemMeta.setDisplayName(Message.color(name));
         itemMeta.setLore(NString.toStringlist(lore));
-        itemStack.setItemMeta(itemMeta);
-        return itemStack;
-    }
-
-    public static ItemStack addId(ItemStack itemStack, Integer integer) {
-        ItemMeta itemMeta = itemStack.getItemMeta();
-        itemMeta.setCustomModelData(integer);
         itemStack.setItemMeta(itemMeta);
         return itemStack;
     }

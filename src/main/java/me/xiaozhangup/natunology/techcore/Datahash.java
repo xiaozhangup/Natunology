@@ -16,6 +16,4 @@ public class Datahash {
 
     public static HashMap<Player, String> lastgroup = new HashMap<>();
 
-    public static HashMap<Integer, List<ItemStack>> crafttable = new HashMap<>();
-
 }

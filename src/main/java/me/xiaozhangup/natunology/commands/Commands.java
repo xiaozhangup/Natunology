@@ -2,6 +2,7 @@ package me.xiaozhangup.natunology.commands;
 
 import me.xiaozhangup.natunology.Main;
 import me.xiaozhangup.natunology.api.Message;
+import me.xiaozhangup.natunology.techcore.api.ItemHash;
 import me.xiaozhangup.natunology.techcore.items.Items;
 import me.xiaozhangup.natunology.techcore.views.MainTap;
 import org.bukkit.Bukkit;
@@ -56,6 +57,13 @@ public class Commands {
                     }
                 } else if (inside[0].equals("guide")) {
                     MainTap.openMainTap(p);
+                } else if (inside[0].equals("getitem")) {
+                    try {
+                        p.getInventory().addItem(ItemHash.getItem(Integer.valueOf(inside[1])));
+                        Message.send(p, "&f[&7科技&f] &a物品已经发送到您的背包!");
+                    } catch (Exception e) {
+                        Message.send(p, "&f[&7科技&f] &c没有这个物品!");
+                    }
                 } else {
                     Message.send(p, "&f[&7科技&f] &c没有这个命令!", "&f[&7科技&f] 输入/ntg help 查看帮助");
                 }
