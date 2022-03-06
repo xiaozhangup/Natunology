@@ -2,8 +2,8 @@ package me.xiaozhangup.natunology;
 
 import me.xiaozhangup.natunology.commands.Commands;
 import me.xiaozhangup.natunology.event.MovePart;
+import me.xiaozhangup.natunology.techcore.api.Test;
 import me.xiaozhangup.natunology.techcore.events.Books;
-import me.xiaozhangup.natunology.techcore.views.MainTap;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -31,7 +31,7 @@ public class Main extends JavaPlugin {
         getLogger().info("Commands Loaded!");
 
         Bukkit.getPluginManager().registerEvents(new Books(), this);
-        Bukkit.getPluginManager().registerEvents(new MainTap(), this);
+        Test.runTest();
 
 //        if (getConfig().getBoolean("Dead.enable")) {
 //            Bukkit.getPluginManager().registerEvents(new Invkeep() , this);

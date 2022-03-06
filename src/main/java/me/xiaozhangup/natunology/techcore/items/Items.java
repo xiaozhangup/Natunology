@@ -2,11 +2,9 @@ package me.xiaozhangup.natunology.techcore.items;
 
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
-import com.sun.org.apache.xerces.internal.xs.StringList;
 import me.xiaozhangup.natunology.api.Message;
 import me.xiaozhangup.natunology.api.NString;
 import org.bukkit.Material;
-import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
@@ -99,9 +97,33 @@ public class Items {
     }
 
     public static ItemStack getHome() {
-        ItemStack itemStack = getSkull("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTJkN2E3NTFlYjA3MWUwOGRiYmM5NWJjNWQ5ZDY2ZTVmNTFkYzY3MTI2NDBhZDJkZmEwM2RlZmJiNjhhN2YzYSJ9fX0=" , "&f返回主页面" , NString.toStringlist(" " , "&7单击返回"));
+        ItemStack itemStack = getSkull("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTJkN2E3NTFlYjA3MWUwOGRiYmM5NWJjNWQ5ZDY2ZTVmNTFkYzY3MTI2NDBhZDJkZmEwM2RlZmJiNjhhN2YzYSJ9fX0=", "&f返回主页面", NString.toStringlist(" ", "&7单击返回"));
         ItemMeta itemMeta = itemStack.getItemMeta();
         itemMeta.setCustomModelData(3);
+        itemStack.setItemMeta(itemMeta);
+        return itemStack;
+    }
+
+    public static ItemStack getBack() {
+        ItemStack itemStack = getSkull("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjZkYWI3MjcxZjRmZjA0ZDU0NDAyMTkwNjdhMTA5YjVjMGMxZDFlMDFlYzYwMmMwMDIwNDc2ZjdlYjYxMjE4MCJ9fX0=", "&f返回上一页", NString.toStringlist(" ", "&7单击返回"));
+        ItemMeta itemMeta = itemStack.getItemMeta();
+        itemMeta.setCustomModelData(4);
+        itemStack.setItemMeta(itemMeta);
+        return itemStack;
+    }
+
+    public static ItemStack itemBuilder(Material material, String name, String... lore) {
+        ItemStack itemStack = new ItemStack(material);
+        ItemMeta itemMeta = itemStack.getItemMeta();
+        itemMeta.setDisplayName(Message.color(name));
+        itemMeta.setLore(NString.toStringlist(lore));
+        itemStack.setItemMeta(itemMeta);
+        return itemStack;
+    }
+
+    public static ItemStack addId(ItemStack itemStack, Integer integer) {
+        ItemMeta itemMeta = itemStack.getItemMeta();
+        itemMeta.setCustomModelData(integer);
         itemStack.setItemMeta(itemMeta);
         return itemStack;
     }
