@@ -1,6 +1,7 @@
 package me.xiaozhangup.natunology;
 
 import me.xiaozhangup.natunology.commands.Commands;
+import me.xiaozhangup.natunology.event.ChatFormat;
 import me.xiaozhangup.natunology.event.MovePart;
 import me.xiaozhangup.natunology.techcore.api.Test;
 import me.xiaozhangup.natunology.techcore.events.Books;
@@ -25,6 +26,12 @@ public class Main extends JavaPlugin {
             MovePart.runStep();
             Bukkit.getPluginManager().registerEvents(new MovePart(), this);
             getLogger().info("Step Loaded!");
+        }
+
+        if (getConfig().getBoolean("ChatFormat.enable")) {
+            MovePart.runStep();
+            Bukkit.getPluginManager().registerEvents(new ChatFormat(), this);
+            getLogger().info("ChatFormat Loaded!");
         }
 
         Commands.regCommands();

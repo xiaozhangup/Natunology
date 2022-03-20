@@ -1,6 +1,9 @@
 Step:
   enable: false
   size: 1.05
+ChatFormat:
+  enable: false
+  format: "[level] [tag] [me] > §x§f§5§f§5§f§5{MESSAGE}"
 #我们禁用了这些功能于源代码
 #Dead:
 #  enable: true
